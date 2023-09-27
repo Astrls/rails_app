@@ -9,11 +9,27 @@
         <li class="nav-item">
           <%# <a class="nav-link active" aria-current="page" href="/">Home</a> %>
           <%= link_to "Home", root_path, class: "nav-link" %>
-          
         </li>
         <li class="nav-item">
           <%= link_to "About", about_path, class: "nav-link" %>
         </li>
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <% if Current.user %>
+          <li class="nav-items">
+            <span><%= link_to Current.user.email, profile_path, class: "nav-link"%></span>
+          </li>
+          <li class="nav-items">
+            <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-dark" %>
+          </li>
+        <% else %>
+          <li class="nav-items">
+            <%= link_to "Sign Up", signup_path, class: "nav-link" %>
+          </li>
+          <li class="nav-items">
+            <%= link_to "Log in", login_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
