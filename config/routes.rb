@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   #Password update routes
   get "password", to: "passwords#edit", as: :edit_password
   patch "password", to: "passwords#update", as: :update_password
+  get "password/reset", to: "password_reset#new"
+  post "password/reset", to: "password_reset#create"
+  get "password/reset/edit", to: "password_reset#edit"
+  patch "password/reset/edit", to: "password_reset#update"
   
   #Log out route
   delete "logout", to: "sessions#destroy"

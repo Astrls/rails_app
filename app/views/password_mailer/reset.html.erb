@@ -1,0 +1,7 @@
+Hi <%= params[:user].email %>,
+
+Someone requested a password reset for your account on blurb.io 
+
+If this was you, click the link below to proceed. This link will expire automatically in 15 minutes.
+
+<%= link_to "Reset my password", password_reset_edit_url(token: @token) %>
