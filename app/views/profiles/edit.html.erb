@@ -1,0 +1,28 @@
+<h1>This is a profile page</h1>
+
+<div class="border border-3 p-5">
+    <%= form_with model: Profile, url: edit_profile_path do |form| %>
+    <div class="mb-3">
+        <%= form.label "Change Picture" %>
+        <%= form.text_field :photo, type: "file", class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label "First Name" %>
+      <%= form.text_field :first_name, placeholder: @profile.first_name, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+        <%= form.label "Last Name" %>
+        <%= form.text_field :last_name, placeholder: @profile.last_name, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+        <%= form.label "Bio" %>
+        <%= form.text_area(:content, rows: 3, placeholder: @profile.bio, data: {provide: "markdown"}, class: "form-control")%>
+    </div>
+
+    <div class="mb-3">
+      <%= form.submit "Update", class: "btn btn-dark" %>
+    </div>
+  <% end %>
+</div>
+
+<%= button_to "Change Password", edit_password_path, method: :get, class: "btn btn-dark mt-3" %>
