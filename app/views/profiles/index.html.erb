@@ -1,3 +1,9 @@
 <h1>This is a profile page</h1>
 
-<%= button_to "Change Password", edit_password_path, method: :get, class: "btn btn-dark" %>
+<div class="border border-3 p-5">
+<%= @profile.first_name %>
+<%= @profile.picture %>
+<%= @profile.phone %>
+</div>
+
+<%= button_to "Change Password", edit_password_path, method: :get, class: "btn btn-dark mt-3" %>
