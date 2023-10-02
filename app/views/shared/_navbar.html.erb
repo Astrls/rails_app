@@ -19,8 +19,11 @@
           <li class="nav-items">
             <span><%= link_to Current.user.email, "/profile/edit/#{Current.user[:profile_id]}", class: "nav-link"%></span>
           </li>
-          <li class="nav-items">
+          <li class="nav-items px-2">
             <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-dark" %>
+          </li>
+          <li class="nav-items px-2">
+            <%= button_to "New Project", project_new_path, method: :get, class: "btn btn-primary" %>
           </li>
         <% else %>
           <li class="nav-items">

@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   get "profile/edit/:id", to: "profiles#edit", as: :edit_profile
   patch "profile/edit/:id", to: "profiles#update", as: :update_profile
 
+  get "project/new", to: "projects#new"
+
   # Defines the root path route ("/")
   root to: "main#index" 
 end

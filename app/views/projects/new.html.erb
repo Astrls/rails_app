@@ -1,0 +1,18 @@
+<h1>Create a new project</h1>
+
+<div class="border border-3 p-5">
+    <%= form_with model: Project, url: project_new_path do |form| %>
+    <div class="mb-3">
+      <%= form.label "Project name" %>
+      <%= form.text_field :first_name, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+        <%= form.label "Project descript" %>
+        <%= form.text_area(:content, rows: 3, data: {provide: "markdown"}, class: "form-control")%>
+    </div>
+
+    <div class="mb-3">
+      <%= form.submit "Create project", class: "btn btn-dark" %>
+    </div>
+  <% end %>
+</div>
